@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/receipt_bc"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/R_Info"
+        android:layout_width="370dp"
+        android:layout_height="90dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:maxLines="10"
+        android:minHeight="121dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <TextView
+        android:id="@+id/DT_EN"
+        android:layout_width="185dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/R_Info"
+        android:text="text 1\ntext2"
+        android:maxLines="2"
+        android:minHeight="121dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="2dp" />
+    <TextView
+        android:id="@+id/DT_AR"
+        android:layout_width="185dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/R_Info"
+        android:gravity="right"
+        android:text="text 1\ntext2"
+        android:layout_marginRight="10dp"
+        android:maxLines="2"
+        android:minHeight="121dp"
+        android:layout_toRightOf="@+id/DT_EN"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <TextView
+        android:id="@+id/Bank_Info"
+        android:layout_width="374dp"
+        android:layout_height="100dp"
+        android:minHeight="89dp"
+        android:textSize="10dp"
+        android:layout_marginLeft="10dp"
+        android:maxLines="15"
+        android:layout_below="@+id/DT_EN"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="132dp" />
+
+    <TextView
+        android:id="@+id/App_EN"
+        android:layout_width="185dp"
+        android:layout_height="66dp"
+        android:minHeight="66dp"
+        android:text="test\ntest2\ntest3\ntest4"
+        android:textSize="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/Bank_Info"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="234dp" />
+    <TextView
+        android:id="@+id/App_AR"
+        android:layout_width="185dp"
+        android:layout_height="66dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:minHeight="66dp"
+        android:layout_toRightOf="@+id/App_EN"
+        android:gravity="right"
+        android:text="test\ntest2\ntest3\ntest4"
+        android:textSize="10dp"
+        android:maxLines="10"
+        android:textColor="@color/black"
+        android:layout_below="@+id/Bank_Info"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="234dp" />
+
+    <TextView
+        android:id="@+id/Amount_EN"
+        android:layout_width="185dp"
+        android:layout_height="80dp"
+        android:minHeight="70dp"
+        android:text="test\ntest2\ntest3\ntest4"
+        android:textSize="10dp"
+        android:maxLines="5"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/App_EN"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="304dp" />
+
+    <TextView
+        android:id="@+id/Amount_AR"
+        android:layout_width="185dp"
+        android:layout_height="70dp"
+        android:minHeight="80dp"
+        android:text="test\ntest2\ntest3\ntest4"
+        android:textSize="10dp"
+        android:maxLines="5"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/Amount_EN"
+        android:gravity="right"
+        android:textColor="@color/black"
+        android:layout_below="@+id/App_EN"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="304dp" />
+    <TextView
+        android:id="@+id/sys_DT_EN"
+        android:layout_width="185dp"
+        android:layout_height="35dp"
+        android:minHeight="40dp"
+        android:text="test1 \ntest2"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/Amount_AR"
+        android:textColor="@color/black"
+        android:paddingTop="10dp"
+        android:gravity="left"
+        android:textSize="10dp"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="380dp" />
+
+
+    <TextView
+        android:id="@+id/sys_DT_AR"
+        android:layout_width="185dp"
+        android:layout_height="35dp"
+        android:minHeight="40dp"
+        android:text="test1 \ntest2"
+        android:paddingRight="10dp"
+        android:layout_below="@+id/Amount_AR"
+        android:layout_toRightOf="@+id/sys_DT_EN"
+        android:textColor="@color/black"
+        android:paddingTop="10dp"
+        android:gravity="right"
+        android:textSize="10dp"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="380dp" />
+
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="361dp"
+        android:layout_height="75dp"
+        android:minHeight="117dp"
+        android:layout_below="@+id/sys_DT_EN"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:text="test\ntest2\ntest3\ntest4"
+        android:textSize="10dp"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="380dp" />
+
+    <TextView
+        android:id="@+id/ALLdetails"
+        android:layout_width="361dp"
+        android:layout_height="35dp"
+        android:minHeight="40dp"
+        android:layout_below="@+id/details"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="10dp"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="380dp" />
+</RelativeLayout>

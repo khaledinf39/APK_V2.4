@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+
+    <!-- Number Pad -->
+
+    <dimen name="passcode_margin_left">17dp</dimen>
+    <dimen name="maddile_button_margin">40dp</dimen>
+    <dimen name="passcode_layout_margin">40dp</dimen>
+    <dimen name="middle_layoyt_margin">20dp</dimen>
+    <dimen name="clearandenter_text_size">24sp</dimen>
+    <dimen name="number_btn_size">62dp</dimen>
+
+    <dimen name="margin_top">10dp</dimen>
+     <dimen name="header_text_size">30sp</dimen>
+
+</resources>

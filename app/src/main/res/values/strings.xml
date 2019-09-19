@@ -1,0 +1,78 @@
+<resources>
+    <!-- app settings -->
+
+
+
+    <string name="example_url">https://www.google.com</string>
+    <string name="server_cert_asset_name">master-cacert.pem</string>
+    <string name="client_cert_file_name">client-cert.p12</string>
+    <string name="client_cert_password">chariot</string>
+
+
+
+    <string name="app_name">mPOS</string>
+
+    <string name="skip_intro">SKIP</string>
+
+    <!-- menu -->
+    <string name="menu_connect">CONNECT</string>
+    <string name="menu_retailer_data">TERMINAL  PARAMETERS</string>
+    <string name="menu_last_txn_data">LAST TRANSACTION</string>
+    <string name="menu_last_recon_data">LAST RECONCILIATION</string>
+    <string name="menu_check_existance">CHECK CONNECTIVITY</string>
+    <string name="menu_on">MENU ON</string>
+    <string name="menu_off">MENU OFF</string>
+    <string name="menu_set_language_english">SET ENGLISH LANG</string>
+    <string name="menu_set_language_arabic">SET ARABIC LANG</string>
+    <string name="menu_get_app_settings">TERMINAL CONFIGURATION</string>
+    <string name="menu_get_card_scheme">CARD SCHEMES</string>
+    <string name="menu_get_public_keys">PUBLIC KEYS</string>
+    <string name="menu_get_aid_list">AID LIST</string>
+    <string name="menu_get_connection_settings">COMM PARAMETERS</string>
+    <string name="menu_get_device_flags">DEVICE SPECIFIC FLAGS</string>
+    <string name="menu_set_connection_mode">CONNECTION SETTINGS</string>
+    <string name="menu_get_retailer_data">RETAILER DATA</string>
+    <string name="warning_dialog">mPOS</string>
+    <string name="exit_app">Do you want to exit</string>
+    <string name="search_device">SEARCHING FOR PAX DEVICES</string>
+    <string name="menu_All_txn">GET ALL TRAN.</string>
+    <string name="menu_all_recon_data">GET ALL RECON DATA</string>
+    <string name="lang">عربي</string>
+
+    <!-- Number pad -->
+    <string name="num1">1</string>
+    <string name="num2">2</string>
+    <string name="num3">3</string>
+    <string name="num4">4</string>
+    <string name="num5">5</string>
+    <string name="num6">6</string>
+    <string name="num7">7</string>
+    <string name="num8">8</string>
+    <string name="num9">9</string>
+    <string name="num0">0</string>
+    <string name="clear">CLEAR</string>
+    <string name="enter">ENTER</string>
+    <string name="enter_pin">ENTER PIN</string>
+
+    <string-array name="connection_modes">
+        <item>Bluetooth</item>
+        <item>Wifi</item>
+    </string-array>
+
+    <string name="connection_mode_prompt">Choose the connection mode</string>
+
+    <string-array name="homeGread">
+        <item>SALE</item>
+        <item>REFUND</item>
+        <item>AUTHORIZATION</item>
+        <item>PURCHASE WITH NAQD</item>
+        <item>CASH ADVANCE</item>
+        <item>REVERSAL</item>
+        <item>PURCHASE ADVICE</item>
+        <item>RECONCILIATION</item>
+    </string-array>
+    <string name="conected">NOT CONNECTED</string>
+    <string name="MPOSDevice">MPOS Device: </string>
+    <string name="TID">TID : </string>
+</resources>
+

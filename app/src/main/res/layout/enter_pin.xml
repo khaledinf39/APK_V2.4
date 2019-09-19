@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark" >
+
+    <TextView
+        android:id="@+id/enter_pin_text"
+        style="@style/header_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_top"
+        android:text="@string/enter_pin" />
+
+    <LinearLayout
+        android:id="@+id/password_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enter_pin_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/passcode_layout_margin"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/passcode_margin_left"
+         android:paddingEnd="@dimen/passcode_margin_left"
+          android:paddingStart="@dimen/passcode_margin_left" >
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="260dp"
+        android:layout_below="@id/enter_pin_text"
+        android:layout_marginTop="@dimen/passcode_layout_margin" >
+
+        <ImageButton
+            android:id="@+id/passcodeDeleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@drawable/passcode_clear" >
+        </ImageButton>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/number_pad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password_circle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+         >
+
+        <LinearLayout
+            android:id="@+id/first_three_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/passcode1"
+                style="@style/numberpad_style"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/number_btn_size"
+                android:text="@string/num1" >
+            </Button>
+
+            <Button
+                android:id="@+id/passcode2"
+                style="@style/numberpad_style"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/number_btn_size"
+                android:layout_marginLeft="@dimen/maddile_button_margin"
+                android:layout_marginRight="@dimen/maddile_button_margin"
+                android:text="@string/num2" >
+            </Button>
+
+            <Button
+                android:id="@+id/passcode3"
+                style="@style/numberpad_style"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/number_btn_size"
+                android:text="@string/num3" >
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/second_three_number"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/number_btn_size"
+            android:layout_below="@id/first_three_number"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/middle_layoyt_margin"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/passcode4"
+                style="@style/numberpad_style"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/number_btn_size"
+                android:text="@string/num4" >
+            </Button>
+
+            <Button
+                android:id="@+id/passcode5"
+                style="@style/numberpad_style"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/number_btn_size"
+                android:layout_marginLeft="@dimen/maddile_button_margin"
+                android:layout_marginRight="@dimen/maddile_button_margin"
+                android:text="@string/num5" >
+            </Button>
+
+            <Button
+                android:id="@+id/passcode6"
+                style="@style/numberpad_style"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/number_btn_size"
+                android:text="@string/num6" >
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/last_three_number"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/number_btn_size"
+            android:layout_below="@id/second_three_number"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/middle_layoyt_margin"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/passcode7"
+                style="@style/numberpad_style"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/number_btn_size"
+                android:text="@string/num7" >
+            </Button>
+
+            <Button
+                android:id="@+id/passcode8"
+                style="@style/numberpad_style"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/number_btn_size"
+                android:layout_marginLeft="@dimen/maddile_button_margin"
+                android:layout_marginRight="@dimen/maddile_button_margin"
+                android:text="@string/num8" >
+            </Button>
+
+            <Button
+                android:id="@+id/passcode9"
+                style="@style/numberpad_style"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/number_btn_size"
+                android:text="@string/num9" >
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zero_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/number_btn_size"
+            android:layout_below="@id/last_three_number"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/middle_layoyt_margin"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/clearBtn"
+                style="@style/clearAndEnterStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/number_btn_size"
+                android:background="@color/md__transparent"
+                android:text="@string/clear" >
+            </Button>
+
+            <Button
+                android:id="@+id/passcode0"
+                style="@style/numberpad_style"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/number_btn_size"
+                android:layout_marginLeft="@dimen/maddile_button_margin"
+                android:layout_marginRight="@dimen/maddile_button_margin"
+                android:text="@string/num0" >
+            </Button>
+
+            <Button
+                android:id="@+id/enterBtn"
+                style="@style/clearAndEnterStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/number_btn_size"
+                android:background="@color/md__transparent"
+                android:text="@string/enter" >
+            </Button>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/forgotPin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/number_pad"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/middle_layoyt_margin"
+        android:background="@drawable/btn"
+        android:gravity="center"
+        android:text="FORGOT PIN"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp" />
+
+</RelativeLayout>

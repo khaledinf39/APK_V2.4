@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+       >
+
+    <group android:id="@+id/group1"
+        android:visible="false">
+        <item
+            android:id="@+id/menu_connect_id"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_connect"/>
+
+        <item
+            android:id="@+id/menu_get_terminal_data"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_retailer_data"/>
+
+        <item
+            android:id="@+id/menu_check_existance"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_check_existance"/>
+
+        <item
+            android:id="@+id/menu_get_last_txn_data"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_last_txn_data"/>
+        <item
+            android:id="@+id/menu_all_txn_data"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_All_txn"/>
+
+        <item
+            android:id="@+id/menu_all_recon_data"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_all_recon_data"/>
+
+        <item
+            android:id="@+id/menu_get_last_recon_data"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_last_recon_data"/>
+
+        <!--  <item
+            android:id="@+id/menu_on"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_on"/>
+
+        <item
+            android:id="@+id/menu_off"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_off"/>
+-->
+        <item
+            android:id="@+id/menu_set_lanuguage_english"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_set_language_english"/>
+
+        <item
+            android:id="@+id/menu_set_lanuguage_arabic"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_set_language_arabic"/>
+        <item
+            android:id="@+id/menu_get_app_settings"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_get_app_settings"/>
+
+        <!-- <item
+          android:id="@+id/menu_get_card_scheme"
+          android:showAsAction="collapseActionView"
+          android:title="@string/menu_get_card_scheme"/>
+
+    <item
+          android:id="@+id/menu_get_public_keys"
+          android:showAsAction="collapseActionView"
+          android:title="@string/menu_get_public_keys"/>
+
+      <item
+          android:id="@+id/menu_get_aid_list"
+          android:showAsAction="collapseActionView"
+          android:title="@string/menu_get_aid_list"/>
+
+      <item
+          android:id="@+id/menu_get_connection_settings"
+          android:showAsAction="collapseActionView"
+          android:title="@string/menu_get_connection_settings"/>
+      <item
+          android:id="@+id/menu_get_device_flags"
+          android:showAsAction="collapseActionView"
+          android:title="@string/menu_get_device_flags"/>
+      <item
+          android:id="@+id/menu_get_retailer_data"
+          android:showAsAction="collapseActionView"
+          android:title="@string/menu_get_retailer_data"/>
+-->
+
+    </group>
+
+</menu>

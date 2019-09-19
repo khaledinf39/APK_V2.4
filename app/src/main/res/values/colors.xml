@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="actionbar_background">#F2F2F2</color>
+    <color name="black">#000000</color>
+    <!--<color name="background_dark">#1a1a1a</color>-->
+    <color name="background_dark">#1a1a1a</color>
+    <!--<color name="background_light">#292929</color>-->
+    <color name="background_light">#999999</color>
+    <color name="md__transparent">#00000000</color>
+    <!--<color name="green">#adde00</color>-->
+    <color name="green">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+</resources>

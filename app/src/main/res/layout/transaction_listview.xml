@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#87B340"
+    >
+
+    <TextView
+
+        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:id="@+id/hed_t_Amount"
+        android:textSize="20sp"
+        android:text="Amount"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textAppearance="?android:textAppearanceLarge"
+
+        />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_margin="5dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/hed_t_Amount"
+        android:id="@+id/hed_t_RRN"
+        android:text="RRN"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textAppearance="?android:textAppearanceLarge"
+        />
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="180dp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/hed_t_RRN"
+        android:id="@+id/hed_t_Date"
+        android:text="Date"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textAppearance="?android:textAppearanceLarge"
+        />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_below="@+id/hed_t_Date"
+    android:orientation="vertical"
+    >
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight=".80"
+        android:id="@+id/gridtransaction"
+        android:gravity="center"
+        android:horizontalSpacing="2dp"
+        android:numColumns="1"
+        android:padding="1dp"
+        android:background="#c0c0c0"
+        android:layout_margin="1dp"
+        android:verticalSpacing="1dp" />
+
+
+</LinearLayout>
+
+</RelativeLayout>

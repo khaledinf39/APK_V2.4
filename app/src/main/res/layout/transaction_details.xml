@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/background_dark"
+    android:orientation="vertical" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:id="@+id/lyt_transaction_type"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/transactiontypetxt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:text="Type"
+            android:layout_margin="5dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/transactiontypeedittxt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:background="@color/background_dark"
+            android:layout_margin="5dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_weight="1">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyt_transaction_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyt_transaction_type"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/transactionamounttxt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:text="Amount"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/transactionamountedittext"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:background="@color/background_dark"
+            android:layout_margin="5dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyt_transaction_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyt_transaction_amount"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/transactiondatetimetxt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:layout_margin="5dp"
+            android:text="Date"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/transactiondateedittext"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:background="@color/background_dark"
+            android:layout_margin="5dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <!--<LinearLayout
+        android:id="@+id/lyt_transaction_cashier_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyt_transaction_date">
+        <TextView
+            android:id="@+id/cashiernametext"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:layout_margin="5dp"
+            android:text="Cashier Name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/cashiernameedittxt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:layout_margin="5dp"
+            android:text="Satya"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:layout_weight="1"/>
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/lyt_transaction_auth_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyt_transaction_date">
+
+        <TextView
+            android:id="@+id/authcodetxt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:layout_margin="5dp"
+            android:text="Appr Code"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/authcodeedittxt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:layout_margin="5dp"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyt_transaction_refno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyt_transaction_auth_code">
+        <TextView
+            android:id="@+id/refnotxt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:layout_margin="5dp"
+            android:text="RRN"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/refnoedittxt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:layout_margin="5dp"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/approved"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="Transaction Result"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#adde00"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/terminal_status_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyt_transaction_refno"
+        android:gravity="center_vertical|center"
+        android:layout_margin="5dp"
+        android:text=""
+        android:textColor="#adde00"
+        android:textSize="22dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/transactionokbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/terminal_status_message"
+        android:layout_margin="5dp"
+        android:textAlignment="center"
+        android:background="@drawable/btn"
+        android:text="OK"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp" />
+
+
+</RelativeLayout>

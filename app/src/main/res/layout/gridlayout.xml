@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/home_container" 
+    android:background="@color/background_dark">
+
+    <TextView
+        android:id="@+id/bluetooth_status"
+        style="@style/Home_DevInfo"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="462dp"
+        android:text="MPOS Device:"
+        android:textColor="#adde00"
+        android:textSize="13sp" />
+
+
+    <TextView
+        style="@style/Home_txtLang"
+        android:id="@+id/txtLanguge"
+        android:layout_width="150dp"
+        android:text="@string/lang"
+        android:layout_alignParentRight="true"
+        android:layout_height="40dp"
+        android:textColor="#adde00"
+        />
+
+
+
+    <GridView
+        android:id="@+id/grid"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:columnWidth="100dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:layout_below="@+id/txtLanguge"
+        android:numColumns="2"
+        android:padding="2dp"
+        android:layout_margin="7dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,2 @@
+include ':app', ':mpossdk3', ':mpossdk3-release'
+project(':mpossdk3').projectDir = new File('mpossdk')

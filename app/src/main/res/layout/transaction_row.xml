@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+
+    android:background="#018ADA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:layout_margin="5dp">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".35"
+       android:textStyle="bold"
+        android:id="@+id/t_Amount"
+        android:text="Amount"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="14dp"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        />
+
+    <TextView
+
+        android:id="@+id/t_RNN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".35"
+        android:textStyle="bold"
+        android:text="RNN"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:textSize="14dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".35"
+        android:id="@+id/t_Date"
+        android:textStyle="bold"
+        android:text="Date"
+        android:textSize="14dp"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:mpossdk3-release:unspecified@jar">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/mpossdk3-release/build/.transforms/9b9f86d78d1b5157198c38ba0cd16571/mpossdk3-release/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mpossdk3-release/build/.transforms/9b9f86d78d1b5157198c38ba0cd16571/mpossdk3-release/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/mpossdk3-release/build/.transforms/9b9f86d78d1b5157198c38ba0cd16571/mpossdk3-release/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

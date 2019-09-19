@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/connection_settings_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="CONNECTION SETTINGS"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/green"
+        android:textSize="28sp" />
+
+    <Spinner
+        android:id="@+id/connection_mode"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_below="@+id/connection_settings_title"
+        android:entries="@array/connection_modes"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:layout_margin="5dp"
+        android:prompt="@string/connection_mode_prompt"
+        android:background="@color/background_light">
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/ip_address_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/connection_mode"
+        android:text="IP Address"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/ip_address_edt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/txtbox"
+        android:ems="15"
+        android:imeOptions="actionNext"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@id/ip_address_txt">
+    </EditText>
+
+    <TextView
+        android:id="@+id/port_number_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ip_address_edt"
+        android:layout_margin="5dp"
+        android:text="Port Number"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/port_number_edt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/txtbox"
+        android:layout_margin="5dp"
+        android:ems="15"
+        android:imeOptions="actionNext"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@id/port_number_txt">
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/port_number_edt"
+        android:layout_margin="5dp">
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="2sp"
+            android:background="@drawable/btn"
+            android:text="SAVE"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/cancle_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:background="@drawable/btn"
+            android:text="CANCEL"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</RelativeLayout>

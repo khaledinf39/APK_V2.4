@@ -1,0 +1,114 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/login"
+    android:theme="@style/loginThem"
+    android:orientation="vertical"
+    android:background="@drawable/login" >
+
+
+<LinearLayout
+    android:id="@+id/lay_username"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_gravity="center"
+    android:layout_marginTop="150dp"
+    >
+
+    <EditText
+        android:id="@+id/enter_UserName_edt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/enter_pin_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text=""
+        android:background="#aaaaaaaa"
+        android:ems="15"
+        android:gravity="center"
+        android:inputType="text"
+        android:hint="Enter User Name"
+        android:textColorHint="#ccc"
+        android:imeOptions="actionDone"
+        android:maxLength="15"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingStart="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" >
+
+        <requestFocus />
+    </EditText>
+</LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/lay_Password"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_marginTop="10dp"
+      android:layout_below="@+id/lay_username"
+      >
+      <EditText
+
+          android:id="@+id/enter_Password_edt"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:text=""
+          android:layout_centerHorizontal="true"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"
+          android:hint="Enter Password"
+          android:textColorHint="#ccc"
+          android:background="#aaaaaaaa"
+          android:ems="15"
+          android:gravity="center"
+          android:inputType="textPassword"
+          android:imeOptions="actionDone"
+          android:maxLength="10"
+          android:paddingLeft="10dp"
+          android:paddingRight="10dp"
+          android:paddingStart="10dp"
+          android:textAppearance="?android:attr/textAppearanceLarge" >
+
+
+      </EditText>
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_marginTop="40dp"
+      android:layout_below="@+id/lay_Password"
+      >
+      <Button
+          android:id="@+id/save_btn"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+        android:layout_gravity="center"
+          android:layout_margin="70dp"
+          android:background="#aaaaaaaa"
+          android:text="LOGIN"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:textColor="#fff"
+          android:textSize="22sp" />
+  </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        >
+
+        <TextView
+            android:id="@+id/txt_Register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:layout_gravity="bottom"
+
+            android:textColor="#fff"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>
