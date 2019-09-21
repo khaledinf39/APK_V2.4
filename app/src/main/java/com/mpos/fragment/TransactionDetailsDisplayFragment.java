@@ -1,6 +1,7 @@
 package com.mpos.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -187,7 +188,10 @@ public class TransactionDetailsDisplayFragment extends Fragment implements
 	public void onSuccess(int status) {
 		if (status==200){
 			Toast.makeText(getActivity(),"The data added to database with successfully",Toast.LENGTH_LONG).show();
-			getActivity().finish();
+			Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("de.ozerov.fully");
+			if (launchIntent != null) {
+				startActivity(launchIntent);//null pointer check in case package name was not found
+			}
 		}
 	}
            @Override

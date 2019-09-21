@@ -121,6 +121,9 @@ public class HomeActivity extends MposBaseActivity {
 
             getFragmentManager().beginTransaction().replace(R.id.
                     main_fragment, connectionFragment, "CONFRAGMENT").commit();
+
+
+
         }
 
         // ATTENTION: This was auto-generated to handle app links.

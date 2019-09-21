@@ -192,12 +192,12 @@ public class ProgressFragment extends Fragment {
 					new Handler(Looper.getMainLooper()).post(new Runnable() {
 						@Override
 						public void run() {
-							isSendingDigitalReceipt = false;
-							Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
-							getFragmentManager()
-									.beginTransaction()
-									.replace(R.id.main_fragment, new GridViewFragment(),
-											"HOMESCREEN").commit();
+//							isSendingDigitalReceipt = false;
+//							Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+//							getFragmentManager()
+//									.beginTransaction()
+//									.replace(R.id.main_fragment, new GridViewFragment(),
+//											"HOMESCREEN").commit();
 						}
 					});
 				}
@@ -286,14 +286,14 @@ public class ProgressFragment extends Fragment {
 			new Handler(Looper.getMainLooper()).post(new Runnable() {
 				@Override
 				public void run() {
-					MPOSService.getInstance(getActivity()).cancelTransaction();
-					Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
-					progress.setVisibility(View.GONE);
-					textView.setText("TRANSACTION FAILED, PLEASE TRY AGAIN..");
-					getFragmentManager()
-							.beginTransaction()
-							.replace(R.id.main_fragment, new GridViewFragment(),
-									"HOMESCREEN").commit();
+//					MPOSService.getInstance(getActivity()).cancelTransaction();
+//					Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+//					progress.setVisibility(View.GONE);
+//					textView.setText("TRANSACTION FAILED, PLEASE TRY AGAIN..");
+//					getFragmentManager()
+//							.beginTransaction()
+//							.replace(R.id.main_fragment, new GridViewFragment(),
+//									"HOMESCREEN").commit();
 				}
 			});
 
