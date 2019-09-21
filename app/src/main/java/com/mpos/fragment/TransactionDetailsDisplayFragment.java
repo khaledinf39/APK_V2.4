@@ -187,6 +187,7 @@ public class TransactionDetailsDisplayFragment extends Fragment implements
 	public void onSuccess(int status) {
 		if (status==200){
 			Toast.makeText(getActivity(),"The data added to database with successfully",Toast.LENGTH_LONG).show();
+			getActivity().finish();
 		}
 	}
            @Override

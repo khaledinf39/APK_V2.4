@@ -359,14 +359,14 @@ public class ProgressFragment extends Fragment {
 				@Override
 				public void run() {
 					Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
-					getFragmentManager()
-							.beginTransaction()
-							.replace(R.id.main_fragment, new GridViewFragment(),
-									"HOMESCREEN").commit();
-					isTrasaction = false;
-					isLastTransactionResult=false;
-					isLastReconciliationResult=false;
-					isSendingDigitalReceipt=false;
+//					getFragmentManager()
+//							.beginTransaction()
+//							.replace(R.id.main_fragment, new GridViewFragment(),
+//									"HOMESCREEN").commit();
+//					isTrasaction = false;
+//					isLastTransactionResult=false;
+//					isLastReconciliationResult=false;
+//					isSendingDigitalReceipt=false;
 				}
 			});
 

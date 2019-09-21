@@ -105,52 +105,69 @@ public class HomeActivity extends MposBaseActivity {
 
     private void gotoSale(){
 
+        Bundle bund=getIntent().getExtras();
+        if (bund!=null) {
+            Log.d("price  :", bund.getString("price") + "  tid :" + bund.getString("tid"));
+
+            ProgressFragment connectionFragment = new ProgressFragment();
+            Bundle bundle = new Bundle();
+            bundle.putBoolean("TSF", true);
+            bundle.putString("CashBack", bund.getString("price"));
+            bundle.putString("Amount", bund.getString("price"));
+            bundle.putString("tid", bund.getString("tid"));
+            bundle.putInt("TransactionType", TransactionType.SALE.getValue());
+
+            connectionFragment.setArguments(bundle);
+
+            getFragmentManager().beginTransaction().replace(R.id.
+                    main_fragment, connectionFragment, "CONFRAGMENT").commit();
+        }
 
         // ATTENTION: This was auto-generated to handle app links.
-        Intent appLinkIntent = getIntent();
-        String appLinkAction = appLinkIntent.getAction();
-        Uri appLinkData = appLinkIntent.getData();
-        Log.d("appLinkData",appLinkData +" ");
-        if (appLinkData!=null){
-            terminal terminal_=new terminal();
-            terminal_.GET_data(getApplicationContext(), appLinkData.toString(), new terminal.OnCoupon_lisennter() {
-                @Override
-                public void onSuccess(int status) {
-
-                }
-
-                @Override
-                public void onSuccess(terminal term) {
-
-                    Log.d("terminal_info  tid",term.getTid()+" amount  :"+term.getAmount());
-
-
-                    ProgressFragment connectionFragment = new ProgressFragment();
-                    Bundle bundle = new Bundle();
-                    bundle.putBoolean("TSF", true);
-                    bundle.putString("CashBack", term.getAmount());
-                    bundle.putString("Amount", term.getAmount());
-                    bundle.putString("tid", term.getTid());
-                    bundle.putInt("TransactionType", TransactionType.SALE.getValue());
-
-                    connectionFragment.setArguments(bundle);
-
-                    getFragmentManager().beginTransaction().replace(R.id.
-                            main_fragment, connectionFragment, "CONFRAGMENT").commit();
-                }
-
-                @Override
-                public void onStart() {
-
-                }
-
-                @Override
-                public void onFailure(String msg) {
-
-                }
-            });
-
-        }
+//        Intent appLinkIntent = getIntent();
+//        String appLinkAction = appLinkIntent.getAction();
+//        Uri appLinkData = appLinkIntent.getData();
+//        Log.d("appLinkData",appLinkData +" ");
+//        if (appLinkData!=null){
+//            terminal terminal_=new terminal();
+//            terminal_.GET_data(getApplicationContext(), appLinkData.toString(), new terminal.OnCoupon_lisennter() {
+//                @Override
+//                public void onSuccess(int status) {
+//
+//                }
+//
+//                @Override
+//                public void onSuccess(terminal term) {
+//
+//                    Log.d("terminal_info  tid",term.getTid()+" amount  :"+term.getAmount());
+//
+//
+//                    ProgressFragment connectionFragment = new ProgressFragment();
+//                    Bundle bundle = new Bundle();
+//                    bundle.putBoolean("TSF", true);
+//                    bundle.putString("CashBack", term.getAmount());
+//                    bundle.putString("Amount", term.getAmount());
+//                    bundle.putString("tid", term.getTid());
+//                    bundle.putInt("TransactionType", TransactionType.SALE.getValue());
+//
+//                    connectionFragment.setArguments(bundle);
+//
+//                    getFragmentManager().beginTransaction().replace(R.id.
+//                            main_fragment, connectionFragment, "CONFRAGMENT").commit();
+//                }
+//
+//                @Override
+//                public void onStart() {
+//
+//                }
+//
+//                @Override
+//                public void onFailure(String msg) {
+//
+//                }
+//            });
+//
+//        }
 
 
     }
