@@ -188,16 +188,17 @@ public class TransactionDetailsDisplayFragment extends Fragment implements
 	public void onSuccess(int status) {
 		if (status==200){
 
-			getFragmentManager().beginTransaction()
-					.replace(R.id.main_fragment, new GridViewFragment(), "HOMESCREEN")
-					.commit();
-
 
 			Toast.makeText(getActivity(),"The data added to database with successfully",Toast.LENGTH_LONG).show();
+//			getFragmentManager().beginTransaction()
+//					.replace(R.id.main_fragment, new GridViewFragment(), "HOMESCREEN")
+//					.commit();
+
 			Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("de.ozerov.fully");
 			if (launchIntent != null) {
 				startActivity(launchIntent);//null pointer check in case package name was not found
 			}
+
 		}
 	}
            @Override

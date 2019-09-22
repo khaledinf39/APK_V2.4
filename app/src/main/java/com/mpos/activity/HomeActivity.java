@@ -2,7 +2,10 @@ package com.mpos.activity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +19,7 @@ import com.mpos.mpossdk.api.MPOSService;
 import com.mpos.mpossdk.api.MPOSServiceCallback;
 import com.mpos.mpossdk.api.TransactionType;
 import com.mpos.utils.CustomAlertDialog;
+import com.mpos.utils.SharedClass;
 
 
 public class HomeActivity extends MposBaseActivity {
@@ -63,8 +67,9 @@ public class HomeActivity extends MposBaseActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-
+//
+//        registerBroadcast();
+//        updateBluetoothName();
     }
 
     @Override
@@ -109,7 +114,7 @@ public class HomeActivity extends MposBaseActivity {
         if (bund!=null) {
             Log.d("price  :", bund.getString("price") + "  tid :" + bund.getString("tid"));
 
-            ProgressFragment connectionFragment = new ProgressFragment();
+            GridViewFragment connectionFragment = new GridViewFragment();
             Bundle bundle = new Bundle();
             bundle.putBoolean("TSF", true);
             bundle.putString("CashBack", bund.getString("price"));
@@ -174,4 +179,58 @@ public class HomeActivity extends MposBaseActivity {
 
 
     }
+
+
+
+    ///////بلوتوث
+
+    BroadCstListener notifyListener = new BroadCstListener();
+
+    private void registerBroadcast() {
+
+        IntentFilter intentFilter = new IntentFilter("com.mpos.bluetooth.status");
+
+       getApplication().registerReceiver(notifyListener,
+                intentFilter);
+
+    }
+
+    private void unRegisterBroadcast() {
+
+        try {
+           getApplication().unregisterReceiver(notifyListener);
+        } catch (Exception e) {
+
+        }
+
+
+    }
+
+
+
+    public class BroadCstListener extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // TODO Auto-generated method stub
+            Bundle bundle = intent.getExtras();
+            if (intent.getAction().equalsIgnoreCase("com.mpos.bluetooth.status")) {
+                updateBluetoothName();
+            }
+
+        }
+
+    }
+
+
+    public void updateBluetoothName(){
+        SharedClass obj_shar = new SharedClass();
+        MPOSService service = MPOSService.getInstance(HomeActivity.this);
+        String deviceName = service.getConnectedDeviceName();
+
+        if(deviceName==null || deviceName.length() == 0)
+            deviceName = "NOT CONNECTED";
+        else obj_shar.setTerminalId(HomeActivity.this);
+    }
+
 }

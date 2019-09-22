@@ -1,6 +1,10 @@
 package com.mpos.fragment;
 
 import android.app.Fragment;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -232,6 +236,8 @@ public class ProgressFragment extends Fragment {
 			}
 		} );
 
+
+
 		return view;
 
 	}
@@ -455,6 +461,7 @@ public class ProgressFragment extends Fragment {
 		getFragmentManager().beginTransaction()
 				.replace(R.id.main_fragment, fragment, "TDDAFRAGMENT").commit();
 	}
+
 
 
 

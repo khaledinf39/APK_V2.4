@@ -8,12 +8,14 @@ import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -78,16 +80,38 @@ public class GridViewFragment extends Fragment {
 
 				switch (position) {
 				case 0:
-					Fragment fragment = new AmountEntryFragment();
 					Bundle bundle = new Bundle();
-					bundle.putInt("TransactionType", TransactionType.SALE.getValue());
-					fragment.setArguments(bundle);
-					getFragmentManager()
-							.beginTransaction()
-							.replace(R.id.main_fragment,
-									fragment,
-									"TSAFRAGMENT").commit();
 
+
+					Bundle bund=GridViewFragment.this.getArguments();
+					if (bund!=null) {
+						Log.d("price  :", bund.getString("price") + "  tid :" + bund.getString("tid"));
+
+						ProgressFragment connectionFragment = new ProgressFragment();
+						bundle.putBoolean("TSF", true);
+						bundle.putString("CashBack", bund.getString("Amount"));
+						bundle.putString("Amount", bund.getString("Amount"));
+						bundle.putString("tid", bund.getString("tid"));
+						bundle.putInt("TransactionType", TransactionType.SALE.getValue());
+
+						connectionFragment.setArguments(bundle);
+
+						getFragmentManager().beginTransaction().replace(R.id.
+								main_fragment, connectionFragment, "CONFRAGMENT").commit();
+
+
+
+					}else {
+						Fragment fragment = new AmountEntryFragment();
+
+						bundle.putInt("TransactionType", TransactionType.SALE.getValue());
+						fragment.setArguments(bundle);
+						getFragmentManager()
+								.beginTransaction()
+								.replace(R.id.main_fragment,
+										fragment,
+										"TSAFRAGMENT").commit();
+					}
 					break;
 
 				case 1:
@@ -213,8 +237,19 @@ public class GridViewFragment extends Fragment {
 			}
 		} );
 
+		Button gotoFK=view.findViewById(R.id.gotoFK);
+		gotoFK.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("de.ozerov.fully");
+				if (launchIntent != null) {
+					startActivity(launchIntent);//null pointer check in case package name was not found
+				}
+			}
+		});
 		registerBroadcast();
 		updateBluetoothName();
+
 		return view;
 	}
 
@@ -282,6 +317,31 @@ public class GridViewFragment extends Fragment {
 			deviceName = "NOT CONNECTED";
 		else obj_shar.setTerminalId(getActivity());
 		bluetoothStatus.setText("MPOS Device: "+deviceName);
+
+
+///////لخ شعفخةشفهضعق ف
+//		Bundle bundle = new Bundle();
+//
+//
+//		Bundle bund=GridViewFragment.this.getArguments();
+//		if (bund!=null) {
+//			Log.d("price  :", bund.getString("price") + "  tid :" + bund.getString("tid"));
+//
+//			ProgressFragment connectionFragment = new ProgressFragment();
+//			bundle.putBoolean("TSF", true);
+//			bundle.putString("CashBack", bund.getString("Amount"));
+//			bundle.putString("Amount", bund.getString("Amount"));
+//			bundle.putString("tid", bund.getString("tid"));
+//			bundle.putInt("TransactionType", TransactionType.SALE.getValue());
+//
+//			connectionFragment.setArguments(bundle);
+//
+//			getFragmentManager().beginTransaction().replace(R.id.
+//					main_fragment, connectionFragment, "CONFRAGMENT").commit();
+//
+//
+//
+//		}
 	}
 
 }
