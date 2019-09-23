@@ -38,7 +38,7 @@ public class TransactionDetailsDisplayFragment extends Fragment implements
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-		View view = inflater.inflate (R.layout.transaction_details, container,
+		final View view = inflater.inflate (R.layout.transaction_details, container,
 				false);
 		Typeface tfBold = Typeface.createFromAsset(getActivity().getAssets(),
 				"Interstate.ttf");
@@ -178,7 +178,7 @@ public class TransactionDetailsDisplayFragment extends Fragment implements
 
 		//this code added by khaled zaid
 //		https://khamsat.com/user/khaled-zaid
-		
+
 		terminal terminal_=new terminal(approved.getText().toString(),
 				type,amount,date,authId,invoiceNo,tid);
 		Toast.makeText(getActivity(),"Start saving...",Toast.LENGTH_SHORT).show();
@@ -190,15 +190,28 @@ public class TransactionDetailsDisplayFragment extends Fragment implements
 
 
 			Toast.makeText(getActivity(),"The data added to database with successfully",Toast.LENGTH_LONG).show();
-//			getFragmentManager().beginTransaction()
-//					.replace(R.id.main_fragment, new GridViewFragment(), "HOMESCREEN")
-//					.commit();
 
-			Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("de.ozerov.fully");
-			if (launchIntent != null) {
-				startActivity(launchIntent);//null pointer check in case package name was not found
-			}
+/// added by khaled zaid **************************************************************************************************************/
+			Button gotoFK=view.findViewById(R.id.gotoFK);
+			gotoFK.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("de.ozerov.fully");
+					if (launchIntent != null) {
+						startActivity(launchIntent);//null pointer check in case package name was not found
+					}
+				}
+			});
 
+			Button gotofirs=view.findViewById(R.id.gotofrs);
+			gotoFK.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					getFragmentManager().beginTransaction()
+							.replace(R.id.main_fragment, new GridViewFragment(), "HOMESCREEN")
+							.commit();
+				}
+			});
 		}
 	}
            @Override
@@ -218,6 +231,9 @@ public class TransactionDetailsDisplayFragment extends Fragment implements
 
 		if(invoiceNo != null &&  ! invoiceNo.equals("") && ! invoiceNo.isEmpty())
 			resul = obj_DataBaseHelper.InsertData(amount,invoiceNo.toString(),date,completeResponse,"Transaction_Table");
+
+
+
 
 		return view;
 

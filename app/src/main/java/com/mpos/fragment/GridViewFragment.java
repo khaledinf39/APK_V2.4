@@ -70,7 +70,22 @@ public class GridViewFragment extends Fragment {
 			}
 		});
 
-
+////added by khaled zaid******************************************************************************************************************/
+		TextView tid=view.findViewById(R.id.tid);
+		TextView price=view.findViewById(R.id.price);
+		Bundle bund=GridViewFragment.this.getArguments();
+		if (bund!=null) {
+			Log.d("price  :", bund.getString("Amount") + "  tid :" + bund.getString("tid"));
+			tid.setText("TID :"+ bund.getString("tid"));
+			price.setText( bund.getString("Amount") +" $");
+		}
+			Button cont_order=view.findViewById(R.id.continue_order);
+cont_order.setOnClickListener(new View.OnClickListener() {
+	@Override
+	public void onClick(View v) {
+		contun_ORder();
+	}
+});
 		gridView.setAdapter(adapter);
 		gridView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -85,7 +100,7 @@ public class GridViewFragment extends Fragment {
 
 					Bundle bund=GridViewFragment.this.getArguments();
 					if (bund!=null) {
-						Log.d("price  :", bund.getString("price") + "  tid :" + bund.getString("tid"));
+						Log.d("price  :", bund.getString("Amount") + "  tid :" + bund.getString("tid"));
 
 						ProgressFragment connectionFragment = new ProgressFragment();
 						bundle.putBoolean("TSF", true);
@@ -237,20 +252,46 @@ public class GridViewFragment extends Fragment {
 			}
 		} );
 
-		Button gotoFK=view.findViewById(R.id.gotoFK);
-		gotoFK.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("de.ozerov.fully");
-				if (launchIntent != null) {
-					startActivity(launchIntent);//null pointer check in case package name was not found
-				}
-			}
-		});
+
 		registerBroadcast();
 		updateBluetoothName();
 
 		return view;
+	}
+
+	private void contun_ORder() {
+		Bundle bundle = new Bundle();
+
+
+		Bundle bund=GridViewFragment.this.getArguments();
+		if (bund!=null) {
+			Log.d("price  :", bund.getString("price") + "  tid :" + bund.getString("tid"));
+
+			ProgressFragment connectionFragment = new ProgressFragment();
+			bundle.putBoolean("TSF", true);
+			bundle.putString("CashBack", bund.getString("Amount"));
+			bundle.putString("Amount", bund.getString("Amount"));
+			bundle.putString("tid", bund.getString("tid"));
+			bundle.putInt("TransactionType", TransactionType.SALE.getValue());
+
+			connectionFragment.setArguments(bundle);
+
+			getFragmentManager().beginTransaction().replace(R.id.
+					main_fragment, connectionFragment, "CONFRAGMENT").commit();
+
+
+
+		}else {
+			Fragment fragment = new AmountEntryFragment();
+
+			bundle.putInt("TransactionType", TransactionType.SALE.getValue());
+			fragment.setArguments(bundle);
+			getFragmentManager()
+					.beginTransaction()
+					.replace(R.id.main_fragment,
+							fragment,
+							"TSAFRAGMENT").commit();
+		}
 	}
 
 
@@ -318,30 +359,6 @@ public class GridViewFragment extends Fragment {
 		else obj_shar.setTerminalId(getActivity());
 		bluetoothStatus.setText("MPOS Device: "+deviceName);
 
-
-///////لخ شعفخةشفهضعق ف
-//		Bundle bundle = new Bundle();
-//
-//
-//		Bundle bund=GridViewFragment.this.getArguments();
-//		if (bund!=null) {
-//			Log.d("price  :", bund.getString("price") + "  tid :" + bund.getString("tid"));
-//
-//			ProgressFragment connectionFragment = new ProgressFragment();
-//			bundle.putBoolean("TSF", true);
-//			bundle.putString("CashBack", bund.getString("Amount"));
-//			bundle.putString("Amount", bund.getString("Amount"));
-//			bundle.putString("tid", bund.getString("tid"));
-//			bundle.putInt("TransactionType", TransactionType.SALE.getValue());
-//
-//			connectionFragment.setArguments(bundle);
-//
-//			getFragmentManager().beginTransaction().replace(R.id.
-//					main_fragment, connectionFragment, "CONFRAGMENT").commit();
-//
-//
-//
-//		}
 	}
 
 }

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_search_device"
     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/prog_page"
-    >
-
+    android:visibility="gone">
     <TextView
         android:visibility="gone"
         android:id="@+id/search_device_txt"
@@ -45,5 +47,107 @@
         android:background="@drawable/connected"
         android:gravity="right"
         android:visibility="gone" />
+</RelativeLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:cardCornerRadius="5dp"
+            android:background="#1F57FF"
+            android:outlineSpotShadowColor="#000"
+
+            app:cardElevation="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:visibility="gone"/>
+
+        <android.support.v7.widget.CardView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="55"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="#ffff"
+            android:outlineSpotShadowColor="#1F57FF"
+            android:outlineAmbientShadowColor="#1F57FF"
+            app:cardElevation="10dp"
+            android:id="@+id/card"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/read_mach"
+                android:scaleType="fitXY"
+                />
+        </android.support.v7.widget.CardView>
+        <android.support.constraint.ConstraintLayout
+            app:layout_constraintTop_toBottomOf="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="45">
+            <TextView
+                android:id="@+id/tx1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="أدخل بطاقتك"
+                android:textSize="22sp"
+                android:textColor="#364F6B"
+                android:fontFamily="@font/cairo_semibold"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+            <TextView
+                android:id="@+id/tx2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+android:text="قم بإدخال بطاقتك من الأسفل أو مررها على الجهاز حسب نوع البطاقة "                android:textColor="#000000"
+                android:fontFamily="@font/cairo_regular"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginStart="35dp"
+                app:layout_constraintTop_toBottomOf="@+id/tx1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="30dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tx2"
+                app:layout_constraintVertical_bias="1"
+                android:orientation="horizontal"
+                android:layout_marginTop="50dp"
+                android:weightSum="2"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/gotoFK"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Go To Fully Kiosk"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/cairo_regular"
+                    android:background="@drawable/bg_btn_dark_green"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="8dp"
+                    />
+
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
 
 </RelativeLayout>

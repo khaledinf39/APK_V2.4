@@ -14,4 +14,8 @@
     <!--<color name="green">#adde00</color>-->
     <color name="green">#FFFFFF</color>
     <color name="red">#FF0000</color>
+    <color name="btn_blue">#BF1F57FF</color>
+
+    <color name="btn_blue_pressed">#1943BE</color>
+    <color name="btn_blue_pressed2">#B44665BD</color>
 </resources>

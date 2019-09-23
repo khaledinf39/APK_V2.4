@@ -2,51 +2,247 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:id="@+id/home_container" 
-    android:background="@color/background_dark">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_container"
+    >
 
-    <TextView
-        android:id="@+id/bluetooth_status"
-        style="@style/Home_DevInfo"
-        android:layout_width="240dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="462dp"
-        android:text="MPOS Device:"
-        android:textColor="#adde00"
-        android:textSize="13sp" />
-
-
-    <TextView
-        style="@style/Home_txtLang"
-        android:id="@+id/txtLanguge"
-        android:layout_width="150dp"
-        android:text="@string/lang"
-        android:layout_alignParentRight="true"
-        android:layout_height="40dp"
-        android:textColor="#adde00"
-        />
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/bluetooth_status"
+            style="@style/Home_DevInfo"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="462dp"
+            android:text="MPOS Device:"
+            android:textColor="#adde00"
+            android:textSize="13sp" />
 
 
+        <TextView
+            style="@style/Home_txtLang"
+            android:id="@+id/txtLanguge"
+            android:layout_width="150dp"
+            android:text="@string/lang"
+            android:layout_alignParentRight="true"
+            android:layout_height="40dp"
+            android:textColor="#adde00"
+            />
 
-    <GridView
-        android:id="@+id/grid"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:columnWidth="100dp"
-        android:gravity="center"
-        android:horizontalSpacing="10dp"
-        android:layout_below="@+id/txtLanguge"
-        android:numColumns="2"
-        android:padding="2dp"
-        android:layout_margin="7dp"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="10dp" />
 
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:text="Go To Fully Kiosk"
-    android:id="@+id/gotoFK"/>
 
+        <GridView
+            android:id="@+id/grid"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:columnWidth="100dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:layout_below="@+id/txtLanguge"
+            android:numColumns="2"
+            android:padding="2dp"
+            android:layout_margin="7dp"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Go To Fully Kiosk"
+            android:id="@+id/gotoFK"/>
+
+    </RelativeLayout>
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <android.support.constraint.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+          <android.support.constraint.ConstraintLayout
+              android:layout_width="match_parent"
+              android:layout_height="250dp"
+              app:layout_constraintTop_toTopOf="parent"
+              android:background="#1F57FF">
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="TID : OFX123"
+                  android:id="@+id/tid"
+                  android:fontFamily="@font/cairo_regular"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  android:layout_margin="20dp"
+                  android:textColor="#fff"
+                  />
+
+          </android.support.constraint.ConstraintLayout>
+
+
+          <android.support.v7.widget.CardView
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintRight_toRightOf="parent"
+              app:layout_constraintLeft_toLeftOf="parent"
+              android:layout_width="300dp"
+              android:layout_height="300dp"
+              android:layout_marginTop="70dp"
+              android:layout_marginStart="20dp"
+              android:layout_marginEnd="20dp"
+              android:layout_marginBottom="10dp"
+              android:outlineSpotShadowColor="#1F57FF"
+              android:outlineAmbientShadowColor="#1F57FF"
+              app:cardCornerRadius="8dp"
+              app:cardBackgroundColor="#ffff"
+              android:background="#ffff"
+              app:cardElevation="10dp"
+              android:id="@+id/card"
+              >
+              <android.support.constraint.ConstraintLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  >
+
+                  <ImageView
+                      android:id="@+id/img0"
+                      app:layout_constraintTop_toTopOf="@+id/img1"
+                      app:layout_constraintRight_toRightOf="parent"
+                      app:layout_constraintLeft_toLeftOf="parent"
+                      android:layout_width="50dp"
+                      android:layout_height="50dp"
+                      android:layout_marginTop="60dp"
+                      android:src="@drawable/card"
+                      android:scaleType="fitCenter"
+                      android:layout_gravity="top"
+                      />
+                  <ImageView
+                      android:id="@+id/img1"
+                      app:layout_constraintTop_toTopOf="parent"
+                      app:layout_constraintRight_toRightOf="parent"
+                      app:layout_constraintLeft_toLeftOf="parent"
+                      android:layout_width="300dp"
+                      android:layout_height="200dp"
+                      android:src="@drawable/prog"
+                      android:scaleType="fitCenter"
+                      android:layout_gravity="top"
+                      android:paddingLeft="10dp"
+                      android:paddingRight="10dp"
+                      />
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="لقد شريت بقيمة"
+                      android:fontFamily="@font/cairo_regular"
+                      app:layout_constraintTop_toBottomOf="@+id/img0"
+                      app:layout_constraintLeft_toLeftOf="parent"
+                      app:layout_constraintRight_toRightOf="parent"
+                      android:layout_marginTop="0dp"
+                      android:id="@+id/t1"
+                      android:textColor="#77869e"
+                      android:textSize="13dp"
+                      />
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="0 %"
+                      android:fontFamily="@font/cairo_regular"
+                      app:layout_constraintBottom_toBottomOf="@+id/img1"
+                      app:layout_constraintLeft_toLeftOf="parent"
+                      android:layout_marginLeft="10dp"
+                      android:id="@+id/t3"
+                      android:textColor="#77869e"
+                      android:textSize="13dp"
+                      />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="100 %"
+                      android:fontFamily="@font/cairo_regular"
+                      app:layout_constraintBottom_toBottomOf="@+id/img1"
+                      app:layout_constraintRight_toRightOf="parent"
+                      android:layout_marginRight="10dp"
+                      android:id="@+id/t4"
+                      android:textColor="#77869e"
+                      android:textSize="13dp"
+                      />
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="600$"
+
+                      android:fontFamily="@font/cairo_regular"
+                      app:layout_constraintTop_toTopOf="@+id/t1"
+                      app:layout_constraintLeft_toLeftOf="parent"
+                      app:layout_constraintRight_toRightOf="parent"
+                      android:layout_marginTop="20dp"
+                      android:id="@+id/price"
+                      android:textColor="#042c5c"
+                      android:textSize="30dp"
+                      />
+              </android.support.constraint.ConstraintLayout>
+          </android.support.v7.widget.CardView>
+          <android.support.constraint.ConstraintLayout
+              app:layout_constraintTop_toBottomOf="@+id/card"
+              app:layout_constraintRight_toRightOf="parent"
+              app:layout_constraintLeft_toLeftOf="parent"
+              android:layout_marginTop="0dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              >
+              <TextView
+                  android:id="@+id/tx1"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="مرحيا"
+                  android:textSize="22sp"
+                  android:textColor="#364F6B"
+                  android:fontFamily="@font/cairo_semibold"
+                  android:layout_marginTop="20dp"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  />
+              <TextView
+                  android:id="@+id/tx2"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="مرجبا بك في بوابة الدفع , قم بالضغظ على إرسال المبلغ ليتم إدخال بطاقتك واتمام الدفع"                android:fontFamily="@font/cairo_regular"
+                  android:gravity="center_horizontal"
+                  android:layout_marginTop="15dp"
+                  android:layout_marginEnd="35dp"
+                  android:layout_marginStart="35dp"
+                  app:layout_constraintTop_toBottomOf="@+id/tx1"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  android:layout_marginBottom="30dp"
+                  />
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="40dp"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/tx2"
+                  android:gravity="center"
+                  app:layout_constraintBottom_toBottomOf="parent">
+
+                  <Button
+                      android:id="@+id/continue_order"
+                      android:layout_width="200dp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginStart="8dp"
+                      android:layout_marginEnd="20dp"
+
+                      android:background="@drawable/bg_btn_blue_rad_8"
+                      android:fontFamily="@font/cairo_regular"
+                      android:text="إرسال المبلغ"
+                      android:textColor="#1F57FF"
+                      android:textSize="14sp" />
+              </LinearLayout>
+          </android.support.constraint.ConstraintLayout>
+
+      </android.support.constraint.ConstraintLayout>
+  </ScrollView>
 </RelativeLayout>

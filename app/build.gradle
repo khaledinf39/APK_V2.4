@@ -43,4 +43,7 @@ dependencies {
     implementation project(':mpossdk3-release')
 
 
+    implementation 'com.android.support:cardview-v7:23.3.+'
+
+
 }

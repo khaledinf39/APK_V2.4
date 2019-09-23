@@ -9,6 +9,14 @@
 
         <item name="android:actionOverflowButtonStyle">@style/OverFlow</item>
     </style>
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:actionOverflowButtonStyle">@style/OverFlow</item>
+    </style>
     <style name="loginThem" parent="Theme.AppCompat.Light.NoActionBar"></style>
 
     <style name="OverFlow" parent="@android:style/Widget.Holo.ActionButton.Overflow">

@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -236,6 +237,18 @@ public class ProgressFragment extends Fragment {
 			}
 		} );
 
+
+		///added by khaled zaid *************************************************************************************************/
+		Button gotoFK=view.findViewById(R.id.gotoFK);
+		gotoFK.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("de.ozerov.fully");
+				if (launchIntent != null) {
+					startActivity(launchIntent);//null pointer check in case package name was not found
+				}
+			}
+		});
 
 
 		return view;
