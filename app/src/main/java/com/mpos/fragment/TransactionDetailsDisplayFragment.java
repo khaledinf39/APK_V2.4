@@ -3,14 +3,17 @@ package com.mpos.fragment;
 import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +38,7 @@ public class TransactionDetailsDisplayFragment extends Fragment implements
 	String terminalStatusCode = "00";
 
 
+	@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -97,6 +101,7 @@ public class TransactionDetailsDisplayFragment extends Fragment implements
 //		String amount = bundle.getString("TRANSACTION_AMOUNT");
 		String amount = bundle.getString("Amount");
 		String tid = bundle.getString("tid");
+		final String lang=bundle.getString("language");
 
 		String date = bundle.getString("TRANSACTION_DATE");
 		authId = bundle.getString("TRANSACTION_AUTH_ID");
@@ -179,39 +184,43 @@ public class TransactionDetailsDisplayFragment extends Fragment implements
 		//this code added by khaled zaid
 //		https://khamsat.com/user/khaled-zaid
 
+/// added by khaled zaid **************************************************************************************************************/
+		Button click_btn=view.findViewById(R.id.click_btn);
+		click_btn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("de.ozerov.fully");
+				if (launchIntent != null) {
+					startActivity(launchIntent);//null pointer check in case package name was not found
+				}
+			}
+		});
+
+		ImageView img=view.findViewById(R.id.img);
+		if (lang.equals("ar")){
+			img.setImageDrawable(getActivity().getDrawable(R.drawable.end_ar));
+			click_btn.setBackgroundDrawable(getActivity().getDrawable(R.drawable.click_ar_btn));
+		}else {
+			img.setImageDrawable(getActivity().getDrawable(R.drawable.end_en));
+			click_btn.setBackgroundDrawable(getActivity().getDrawable(R.drawable.click_btn));
+
+		}
 		terminal terminal_=new terminal(approved.getText().toString(),
 				type,amount,date,authId,invoiceNo,tid);
 		Toast.makeText(getActivity(),"Start saving...",Toast.LENGTH_SHORT).show();
 
 		terminal_.Post_add(getActivity(), new terminal.OnCoupon_lisennter() {
+	@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 	@Override
 	public void onSuccess(int status) {
 		if (status==200){
 
 
 			Toast.makeText(getActivity(),"The data added to database with successfully",Toast.LENGTH_LONG).show();
-
-/// added by khaled zaid **************************************************************************************************************/
-			Button gotoFK=view.findViewById(R.id.gotoFK);
-			gotoFK.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("de.ozerov.fully");
-					if (launchIntent != null) {
-						startActivity(launchIntent);//null pointer check in case package name was not found
-					}
-				}
-			});
-
-			Button gotofirs=view.findViewById(R.id.gotofrs);
-			gotoFK.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					getFragmentManager().beginTransaction()
-							.replace(R.id.main_fragment, new GridViewFragment(), "HOMESCREEN")
-							.commit();
-				}
-			});
+			Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("de.ozerov.fully");
+			if (launchIntent != null) {
+				startActivity(launchIntent);//null pointer check in case package name was not found
+			}
 		}
 	}
            @Override

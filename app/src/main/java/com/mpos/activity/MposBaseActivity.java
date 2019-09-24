@@ -91,6 +91,7 @@ public class MposBaseActivity extends AppCompatActivity {
     public void showActionBar() {
         if (actionBar != null) {
             actionBar.show();
+
         }
     }
 
@@ -133,6 +134,15 @@ public class MposBaseActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        optionMenu = menu;
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.mnu, menu);
+        showMenu();
+        return true;
     }
 
     @Override
@@ -483,14 +493,6 @@ public class MposBaseActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        optionMenu = menu;
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.settings_screen, menu);
-        showMenu();
-        return true;
-    }
 
     /* End of the implementation of listeners */
     private final Runnable scrollTerminalToBottom = new Runnable() {

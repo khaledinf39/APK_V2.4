@@ -6,10 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,7 +55,9 @@ public class ProgressFragment extends Fragment {
 	String Amount = "00.00";
 	TransactionType transactionType = TransactionType.SALE;
 	SharedClass obj_sharedClass = new SharedClass();
+	private String lang;
 
+	@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -73,7 +77,7 @@ public class ProgressFragment extends Fragment {
 
 		tid = bundle.getString("tid");
 		Amount = bundle.getString("Amount");
-
+ lang=bundle.getString("language");
 		isTrasaction = bundle.getBoolean("TSF");
 		transactionType = TransactionType.getTransactionType(bundle.getInt("TransactionType", 1));
 		isLastTransactionResult = bundle.getBoolean("LastTransactionResult", false);
@@ -239,16 +243,13 @@ public class ProgressFragment extends Fragment {
 
 
 		///added by khaled zaid *************************************************************************************************/
-		Button gotoFK=view.findViewById(R.id.gotoFK);
-		gotoFK.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("de.ozerov.fully");
-				if (launchIntent != null) {
-					startActivity(launchIntent);//null pointer check in case package name was not found
-				}
-			}
-		});
+		ImageView img=view.findViewById(R.id.img);
+		if (lang.equals("ar")){
+			img.setImageDrawable(getActivity().getDrawable(R.drawable.prog_ar));
+		}else {
+			img.setImageDrawable(getActivity().getDrawable(R.drawable.prog_en));
+		}
+
 
 
 		return view;
@@ -467,6 +468,7 @@ public class ProgressFragment extends Fragment {
 
 		bundleSale.putString("tid", tid);
 		bundleSale.putString("Amount", Amount);
+		bundleSale.putString("language", lang);
 
 		TransactionDetailsDisplayFragment fragment = new TransactionDetailsDisplayFragment(	);
 		fragment.setArguments(bundleSale);

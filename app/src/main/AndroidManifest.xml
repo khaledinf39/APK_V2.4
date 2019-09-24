@@ -38,10 +38,10 @@
             >
 
         </activity>
-<!--        android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"-->
         <activity
-           
-            android:name="com.mpos.activity.HomeActivity"
+                android:theme="@style/AppTheme2"
+
+        android:name="com.mpos.activity.HomeActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter android:autoVerify="true">

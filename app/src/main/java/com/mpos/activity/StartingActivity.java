@@ -33,7 +33,8 @@ public class StartingActivity extends MposBaseActivity {
 		//showActionBar();
 
 
-		getFragmentManager().beginTransaction().replace(R.id.main_fragment, new MerchantAdminLoginFragment(), "MAAFRAGMENT").commit();
+		getFragmentManager().beginTransaction().
+				replace(R.id.main_fragment, new MerchantAdminLoginFragment(), "MAAFRAGMENT").commit();
 
 
 	}

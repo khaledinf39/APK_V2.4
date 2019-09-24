@@ -6,6 +6,27 @@
     android:layout_gravity="center"
     android:orientation="vertical">
 
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/end_ar"
+            android:scaleType="fitXY"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/click_btn"
+            android:background="@drawable/click_ar_btn"
+            android:layout_marginBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+    </android.support.constraint.ConstraintLayout>
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -239,6 +260,7 @@
 </RelativeLayout>
 
     <android.support.constraint.ConstraintLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <android.support.v7.widget.CardView
