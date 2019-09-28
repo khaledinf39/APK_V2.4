@@ -243,6 +243,7 @@ public class ProgressFragment extends Fragment {
 
 
 		///added by khaled zaid *************************************************************************************************/
+		Hide_sate_bar();
 		ImageView img=view.findViewById(R.id.img);
 		if (lang.equals("ar")){
 			img.setImageDrawable(getActivity().getDrawable(R.drawable.prog_ar));
@@ -255,7 +256,18 @@ public class ProgressFragment extends Fragment {
 		return view;
 
 	}
+	private void Hide_sate_bar() {
+		View decorView = getActivity().getWindow().getDecorView();
 
+		decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+				| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+				| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+				| View.SYSTEM_UI_FLAG_FULLSCREEN
+				| View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+				| View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+				| View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY // hide status bar and nav bar after a short delay, or if the user interacts with the middle of the screen
+		);
+	}
 	@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -40,6 +41,7 @@ import com.mpos.mpossdk.api.TransactionType;
 import com.mpos.mpossdk.api.data.appsettings.AppSettings;
 import com.mpos.utils.BluetoothConnectAsyntask;
 import com.mpos.utils.SharedClass;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import static com.mpos.activity.MposBaseActivity.showRetailerData;
 
@@ -50,12 +52,13 @@ public class GridViewFragment extends Fragment implements MenuItem.OnMenuItemCli
 
 
 
-
-
+Button ar_btn,en_btn;
+	AVLoadingIndicatorView avi;
 	ListView listView;
 	GridView gridView;
 	Fragment fragment;
 	TextView bluetoothStatus;
+	boolean connected=false;
 	/*String[] web = { "SALE", "REFUND", "PRE AUTH", "CASHBACK", "CASH ADV",
 			"VOID", "ADVICE", "RECON"};*/
 
@@ -92,6 +95,25 @@ public class GridViewFragment extends Fragment implements MenuItem.OnMenuItemCli
 		});
 
 ////added by khaled zaid******************************************************************************************************************/
+	Hide_sate_bar();
+		avi=view.findViewById(R.id.avi_load);
+		avi.show();
+		new Handler().postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				// run() method will be executed when 3 seconds have passed
+if (!connected){
+	Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("de.ozerov.fully");
+	if (launchIntent != null) {
+		startActivity(launchIntent);//null pointer check in case package name was not found
+	}
+}
+
+			}
+		}, 10000);
+
+
+
 		final ImageView meun_btn=view.findViewById(R.id.img_menu);
 		meun_btn.setOnClickListener(new View.OnClickListener() {
 
@@ -106,7 +128,7 @@ showMenu(v);
 			Log.d("price  :", bund.getString("Amount") + "  tid :" + bund.getString("tid"));
 			meun_btn.setVisibility(View.GONE);
 		}
-		final Button ar_btn=view.findViewById(R.id.ar_btn);
+		  ar_btn=view.findViewById(R.id.ar_btn);
 		ar_btn.setOnClickListener(new View.OnClickListener() {
 			@RequiresApi(api = Build.VERSION_CODES.M)
 			@Override
@@ -115,7 +137,7 @@ showMenu(v);
 
 			}
 		});
-		Button en_btn=view.findViewById(R.id.en_btn);
+		 en_btn=view.findViewById(R.id.en_btn);
 		en_btn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -295,6 +317,19 @@ showMenu(v);
 
 		return view;
 
+	}
+
+	private void Hide_sate_bar() {
+		View decorView = getActivity().getWindow().getDecorView();
+
+		decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+				| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+				| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+				| View.SYSTEM_UI_FLAG_FULLSCREEN
+				| View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+				| View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+				| View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY // hide status bar and nav bar after a short delay, or if the user interacts with the middle of the screen
+		);
 	}
 
 	@RequiresApi(api = Build.VERSION_CODES.M)
@@ -762,9 +797,17 @@ showMenu(v);
 		MPOSService service = MPOSService.getInstance(getActivity());
 		String deviceName = service.getConnectedDeviceName();
 
-		if(deviceName==null || deviceName.length() == 0)
+		if(deviceName==null || deviceName.length() == 0) {
 			deviceName = "NOT CONNECTED";
-		else obj_shar.setTerminalId(getActivity());
+
+		}
+		else {
+			obj_shar.setTerminalId(getActivity());
+			connected=true;
+			avi.hide();
+			ar_btn.setVisibility(View.VISIBLE);
+			en_btn.setVisibility(View.VISIBLE);
+		}
 		bluetoothStatus.setText("MPOS Device: "+deviceName);
 
 	}

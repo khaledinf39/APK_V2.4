@@ -24,7 +24,20 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="20dp"
             android:scaleType="centerInside"/>
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:indicatorName="BallSpinFadeLoaderIndicator"
+            app:indicatorColor="#000"
+            android:id="@+id/avi_load"
+            android:layout_marginBottom="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
         <Button
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/ar_btn"
@@ -35,6 +48,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             />
         <Button
+            android:visibility="gone"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
